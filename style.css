@@ -1,0 +1,118 @@
+/* moving ball code here */
+
+#traveler {
+    position: absolute;
+    width: 20px;
+    height: 100vh;
+    -webkit-animation-name: travel;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-duration: 9.8s;
+    animation-name: travel;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 9.8s;
+    z-index: 8;
+}
+
+.round_circule {
+    position: absolute;
+    right: -1%;
+    z-index: 0;
+    bottom: 0px;
+}
+
+#bouncer {
+    position: absolute;
+    width: 26vw;
+    height: 26vh;
+    border-radius: 10px;
+    -webkit-animation-name: bounce1, spin1;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 8.2s;
+    animation-name: bounce1, spin1;
+    animation-iteration-count: infinite;
+    animation-duration: 8.2s;
+}
+
+.round_circule img {
+    max-width: 74vh;
+    width: 100%;
+    opacity: 0.9;
+}
+
+
+/* ------------------------- Circle ball Animation ---------------------------------------- */
+
+
+/* keyframes definition for WebKit browsers */
+
+@-webkit-keyframes travel {
+    from {
+        right: 25%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@-webkit-keyframes bounce1 {
+    from,
+    to {
+        bottom: 0;
+        -webkit-animation-timing-function: ease-out;
+    }
+    50% {
+        bottom: 220px;
+        -webkit-animation-timing-function: ease-in;
+    }
+}
+
+@-webkit-keyframes spin1 {
+    from {}
+    to {
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+
+/* ---------------------- keyframes definition for other browsers ----------------------- */
+
+@keyframes travel {
+    from {
+        right: 25%;
+    }
+    to {
+        right: 100%;
+    }
+}
+
+@keyframes bounce1 {
+    from,
+    to {
+        bottom: 18vh;
+        animation-timing-function: ease-out;
+    }
+    50% {
+        bottom: 98vh;
+        animation-timing-function: ease-in;
+    }
+}
+
+@keyframes spin1 {
+    from {
+        -moz-transform: rotate(0);
+        -o-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+    }
+    to {
+        -moz-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
